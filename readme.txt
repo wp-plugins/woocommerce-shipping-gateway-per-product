@@ -14,6 +14,10 @@ This plugin for woocommerce lets you select the available shipping gateways for 
 
 This plugin for woocommerce lets you select the available shipping gateways for each individual product. You can select for each individual product the shipping gateway that will be used by checkout. If no selection is made, then the default shipping gateways are displayed.
 
+This version is limited to set different shipping gateways for 10 product.
+For a small fee you can get the full version with no limitation at: <a href="http://www.dreamfox.nl" target="_blank">www.dreamfox.nl</a>.
+
+
 == Installation ==
 
 1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
@@ -23,10 +27,15 @@ This plugin for woocommerce lets you select the available shipping gateways for 
 
 = What happens if i add more then one product in the shoppingcard with different selected shipping gateways? =
 
-Allowed shipping gateways goes before denied shipping gateways. so if for example you set:
-- product 1 to pick up at store
-- product 2 to pick up at store & local delivery
+Allowed shipping gateways goes before denied shipping gateways. so if for example you set:<br>
+- product 1 to pick up at store<br>
+- product 2 to pick up at store & local delivery<br>
 Then both shipping gateways are shown by checkout
+
+= More Information =
+
+For more information, feel free to visit the official website for this plugin: <a href="http://www.dreamfox.nl" target="_blank">Dreamfox</a>.
+
 
 == Screenshots ==
 
