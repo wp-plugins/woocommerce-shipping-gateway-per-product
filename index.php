@@ -1,13 +1,13 @@
 <?php
 /**
- * Plugin Name: Woocommerce Product Shippings
+ * Plugin Name: Woocommerce Product Shipping
  * Plugin URI: www.dreamfox.nl 
- * Version: 1.0.1
+ * Version: 1.0.4
  * Author: Marco van Loghum
  * Author URI: www.dreamfox.nl 
  * Description: Extend Woocommerce plugin to add shipping methods to a product
  * Requires at least: 3.5
- * Tested up to: 3.5
+ * Tested up to: 3.7
  */
 require_once ABSPATH . WPINC . '/pluggable.php';;
 require_once dirname(dirname(__FILE__)).'/woocommerce/classes/class-wc-payment-gateways.php';
@@ -18,7 +18,7 @@ require_once dirname(dirname(__FILE__)).'/woocommerce/classes/class-wc-cart.php'
 add_action( 'add_meta_boxes', 'ship_meta_box_add', 50 );  
 function ship_meta_box_add()  
 {  
-    add_meta_box( 'shippings', 'Shippings', 'shipping_form', 'product', 'side', 'core' ); 
+    add_meta_box( 'shipping', 'Shipping', 'shipping_form', 'product', 'side', 'core' ); 
 }
 
 
@@ -43,7 +43,7 @@ function shipping_form()
 	}
 	
 	
-	$postShippings = get_metadata('post', $post->ID, 'shippings', false) ;
+	$postShippings = get_metadata('post', $post->ID, 'shipping', false) ;
 	if($woocommerce->shipping->load_shipping_methods())
 		foreach($woocommerce->shipping->load_shipping_methods() as $key=>$method){
 			if($method->enabled=='yes')
@@ -74,10 +74,10 @@ function ship_meta_box_save( $post_id )
 	
 	
 	
-	delete_post_meta($post_id, 'shippings');	
+	delete_post_meta($post_id, 'shipping');	
 	if($_POST['ship'])
 		foreach($_POST['ship'] as $ship)
-    		add_post_meta($post_id, 'shippings', $ship); 
+    		add_post_meta($post_id, 'shipping', $ship); 
 	}
 }
 
@@ -93,7 +93,7 @@ function shipping_method_disable_country( $available_methods ) {
 	$itemsShips = '';
 	if($items)
 		foreach($items as $item){
-		$itemsShips[] = get_post_meta($item['product_id'], 'shippings', false);
+		$itemsShips[] = get_post_meta($item['product_id'], 'shipping', false);
 		}
 		
 
