@@ -4,7 +4,7 @@ Donate link: http://www.dreamfox.nl
 Tags: woocommerce,shipping,plugin,free
 Requires at least: 3.0.1
 Tested up to: 3.7
-Stable tag: 1.0.4
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,6 +45,9 @@ For more information, feel free to visit the official website for this plugin: <
 3. screenshot3.png
 
 == Changelog ==
+
+= 1.0.6 =
+* Bugfixes
 
 = 1.0.4 =
 * tested on woocommerce 2.0.17
