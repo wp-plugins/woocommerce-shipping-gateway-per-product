@@ -19,7 +19,7 @@ This version is limited to set different shipping gateways for 10 product.
 For a small fee you can get the full version with no limitation at: <a href="http://www.dreamfox.nl" target="_blank">www.dreamfox.nl</a>.
 
 <b>other plugins from Dreamfox:</b><br>
-Payment gateway per product: <a href:"http://wordpress.org/plugins/woocommerce-product-payments/">Free version</a> - <a href:"http://www.dreamfox.nl/shop/payment-gateway-per-product-woocommerce/">Full version</a> 
+Payment gateway per product:  <a href="http://wordpress.org/plugins/woocommerce-product-payments/" target="_blank">Information</a> - <a href="http://wordpress.org/plugins/woocommerce-product-payments/" target="_blank">Free version</a> - <a href="http://www.dreamfox.nl/shop/payment-gateway-per-product-woocommerce/" target="_blank">Full version</a> 
 
 == Installation ==
 
