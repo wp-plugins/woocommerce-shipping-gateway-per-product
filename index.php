@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Woocommerce Product Shippings
  * Plugin URI: www.dreamfox.nl 
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: Marco van Loghum
  * Author URI: www.dreamfox.nl 
  * Description: Extend Woocommerce plugin to add shipping methods to a product
@@ -84,9 +84,10 @@ function wps_shipping_method_disable_country( $available_methods ) {
 		if( is_array( $items ) ){
 			foreach($items as $item){
 				$itemsShips = get_post_meta($item['product_id'], 'shippings', true);
-				if(count($itemsShips)){
+				if(is_array($itemsShips)){
 					foreach($arrayKeys as $key){
-                        if( !in_array( $available_methods[$key]->method_id ,$itemsShips) ){
+						$method_id = $available_methods[$key]->method_id;
+                        if( !empty( $method_id ) && !in_array( $method_id ,$itemsShips) ){
 							unset($available_methods[$key]);
 					    }
 					}
