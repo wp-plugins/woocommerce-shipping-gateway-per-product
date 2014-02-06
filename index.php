@@ -2,14 +2,14 @@
 /**
  * Plugin Name: Woocommerce Product Shippings
  * Plugin URI: www.dreamfox.nl 
- * Version: 1.1.1
+ * Version: 1.1.2
  * Author: Marco van Loghum
  * Author URI: www.dreamfox.nl 
  * Description: Extend Woocommerce plugin to add shipping methods to a product
  * Requires at least: 3.5
  * Tested up to: 3.8
  */
-require_once ABSPATH . WPINC . '/pluggable.php';;
+//require_once ABSPATH . WPINC . '/pluggable.php';;
 require_once dirname(dirname(__FILE__)).'/woocommerce/classes/class-wc-payment-gateways.php';
 require_once dirname(dirname(__FILE__)).'/woocommerce/classes/class-wc-cart.php';
 require_once dirname(dirname(__FILE__)).'/woocommerce/classes/class-wc-shipping.php';
