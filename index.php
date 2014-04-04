@@ -2,17 +2,13 @@
 /**
  * Plugin Name: Woocommerce Product Shippings
  * Plugin URI: www.dreamfox.nl 
- * Version: 1.1.3
+ * Version: 1.1.5
  * Author: Marco van Loghum
  * Author URI: www.dreamfox.nl 
  * Description: Extend Woocommerce plugin to add shipping methods to a product
  * Requires at least: 3.5
- * Tested up to: 3.8
+ * Tested up to: 3.8.1
  */
-//require_once ABSPATH . WPINC . '/pluggable.php';;
-//require_once dirname(dirname(__FILE__)).'/woocommerce/classes/class-wc-payment-gateways.php';
-//require_once dirname(dirname(__FILE__)).'/woocommerce/classes/class-wc-cart.php';
-//require_once dirname(dirname(__FILE__)).'/woocommerce/classes/class-wc-shipping.php';
 
 add_action( 'add_meta_boxes', 'wps_ship_meta_box_add', 50 );  
 function wps_ship_meta_box_add() {  
@@ -56,8 +52,14 @@ function wps_shipping_form()
 } 
 
 add_action('save_post', 'wps_ship_meta_box_save', 10, 2 );
-function wps_ship_meta_box_save( $post_id ) {  
-	if(!is_admin()) return;   
+function wps_ship_meta_box_save( $post_id, $post ) {  
+	// Restrict to save for autosave
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+	 	return $post_id;
+
+	// Restrict to save for revisions
+   	if ( isset( $post->post_type ) && $post->post_type == 'revision' )
+      return $post_id;
 	
 	if($_POST['post_type']=='product'){
 		$productIds = get_option('woocommerce_product_apply_ship');
@@ -71,7 +73,10 @@ function wps_ship_meta_box_save( $post_id ) {
 			foreach($_POST['ship'] as $ship)
 				$shippings[] =  $ship;
 		}
-		update_post_meta($post_id, 'shippings', $shippings); 
+		if( count( $shippings ) )
+			update_post_meta($post_id, 'shippings', $shippings);
+		else
+			delete_post_meta($post_id, 'shippings');
 	}
 }
 
@@ -98,4 +103,23 @@ function wps_shipping_method_disable_country( $available_methods ) {
 	return $available_methods;		
 }
 add_filter( 'woocommerce_available_shipping_methods', 'wps_shipping_method_disable_country', 99 );
+
+function update_user_database(){
+	$is_shipping_updated	=	get_option( 'is_shipping_updated' );
+	if( !$is_shipping_updated ){
+		$args = array(
+			'posts_per_page' => -1,
+			'post_type' => 'product',
+			'fields' => 'ids'		 
+		);
+		$products = get_posts( $args );
+		foreach( $products as $pro_id ){
+			$itemsShips = get_post_meta( $pro_id, 'shippings', true);
+			if( empty( $itemsShips ) ){print_r( $pro_id ); delete_post_meta($pro_id, 'shippings');}
+		}
+		update_option( 'is_shipping_updated', true );
+	}
+}
+add_action('wp_head', 'update_user_database');
+
 ?>
