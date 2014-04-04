@@ -7,7 +7,7 @@
  * Author URI: www.dreamfox.nl 
  * Description: Extend Woocommerce plugin to add shipping methods to a product
  * Requires at least: 3.5
- * Tested up to: 3.8.1
+ * Tested up to: 3.8/1
  */
 
 add_action( 'add_meta_boxes', 'wps_ship_meta_box_add', 50 );  
