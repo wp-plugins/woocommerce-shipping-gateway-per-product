@@ -1,10 +1,10 @@
 === Woocommerce Product Shippings per Product ===
 Contributors: dreamfox
-Donate link: http://www.dreamfox.nl
+Donate link: http://www.dreamfoxmedia.nl
 Tags: woocommerce,shipping,plugin,free
 Requires at least: 3.0.1
-Tested up to: 3.8.1
-Stable tag: 1.1.5
+Tested up to: 4.0
+Stable tag: 1.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,13 +14,13 @@ This plugin for woocommerce lets you select the available shippings for each ind
 
 This plugin for woocommerce lets you select the available shippings for each individual product.
 You can select for eacht individual product the shipping that will be used by checkout. If no selection is made, then the default shippings are displayed. If you for example only select paypal then only paypal will available for that product by checking out.
-Works on Woocommerce 2.0.13 - Woocommerce 2.1.6
+Works on Woocommerce 2.0.13 - Woocommerce 2.2.4
 
 This version is limited to set different shippings for 10 product.
-For a small fee you can get the full version with no limitation at: <a href="http://www.dreamfox.nl" target="_blank">www.dreamfox.nl</a>.
+For a small fee you can get the full version with no limitation at: <a href="http://www.dreamfoxmedia.nl" target="_blank">www.dreamfoxmedia.nl</a>.
 
 <b>other plugins from Dreamfox:</b><br>
-Payment gateway per product:  <a href="http://wordpress.org/plugins/woocommerce-product-payments/" target="_blank">Information</a> - <a href="http://wordpress.org/plugins/woocommerce-product-payments/" target="_blank">Free version</a> - <a href="http://www.dreamfox.nl/shop/payment-gateway-per-product-woocommerce/" target="_blank">Full version</a>
+Payment gateway per product:  <a href="http://wordpress.org/plugins/woocommerce-product-payments/" target="_blank">Information</a> - <a href="http://wordpress.org/plugins/woocommerce-product-payments/" target="_blank">Free version</a> - <a href="http://www.dreamfoxmedia.nl/shop/payment-gateway-per-product-woocommerce/" target="_blank">Full version</a>
 
 == Installation ==
 
@@ -58,7 +58,7 @@ Then 'free' shippings are shown by checkout
 
 = More Information =
 
-For more information, feel free to visit the official website for this plugin: <a href="http://www.dreamfox.nl" target="_blank">Dreamfox</a>.
+For more information, feel free to visit the official website for this plugin: <a href="http://www.dreamfoxmedia.nl" target="_blank">Dreamfox</a>.
 
 
 == Screenshots ==
@@ -68,6 +68,9 @@ For more information, feel free to visit the official website for this plugin: <
 3. screenshot3.png
 
 == Changelog === 
+= 1.1.6 =
+* Fixing no shipping available problem by showing highest shipping rate option
+
 = 1.1.5 =
 * Restrict to save for autosave & revision
 
