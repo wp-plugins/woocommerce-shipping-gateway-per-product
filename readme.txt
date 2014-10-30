@@ -1,22 +1,24 @@
-=== Woocommerce Product Shippings per Product ===
+=== Woocommerce Shipping Gateway per Product ===
 Contributors: dreamfox
 Donate link: http://www.dreamfoxmedia.nl
 Tags: woocommerce,shipping,plugin,free
 Requires at least: 3.0.1
 Tested up to: 4.0
-Stable tag: 1.1.6
+Stable tag: 1.1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin for woocommerce lets you select the available shippings for each individual product. 
+This plugin for woocommerce lets you select the available shipping gateway for each individual product. 
 
 == Description ==
 
-This plugin for woocommerce lets you select the available shippings for each individual product.
-You can select for eacht individual product the shipping that will be used by checkout. If no selection is made, then the default shippings are displayed. If you for example only select paypal then only paypal will available for that product by checking out.
-Works on Woocommerce 2.0.13 - Woocommerce 2.2.4
+This plugin for woocommerce lets you select the available shipping gateway for each individual product.<br>
+You can select for eacht individual product the shipping gateway that will be used by checkout.<br>
+If no selection is made, then the default shippings are displayed.<br>
+If you for example only select paypal then only paypal will available for that product by checking out.
+Works on latest Woocommerce
 
-This version is limited to set different shippings for 10 product.
+This version is limited to set different shipping gateways for 10 product.
 For a small fee you can get the full version with no limitation at: <a href="http://www.dreamfoxmedia.nl" target="_blank">www.dreamfoxmedia.nl</a>.
 
 <b>other plugins from Dreamfox:</b><br>
@@ -58,7 +60,7 @@ Then 'free' shippings are shown by checkout
 
 = More Information =
 
-For more information, feel free to visit the official website for this plugin: <a href="http://www.dreamfoxmedia.nl" target="_blank">Dreamfox</a>.
+For more information, feel free to visit the official website for this plugin: <a href="http://www.dreamfox.nl" target="_blank">Dreamfox</a>.
 
 
 == Screenshots ==
@@ -68,6 +70,10 @@ For more information, feel free to visit the official website for this plugin: <
 3. screenshot3.png
 
 == Changelog === 
+= 1.1.7 =
+* Some fixes and made compatible with woocommerce 2.2.4
+* Fixing no shipping available problem by showing highest shipping rate option with solving some condition.
+
 = 1.1.6 =
 * Fixing no shipping available problem by showing highest shipping rate option
 

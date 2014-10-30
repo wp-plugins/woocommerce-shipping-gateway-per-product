@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Woocommerce Product Shippings
+ * Plugin Name: Woocommerce Shipping Gateway per Product
  * Plugin URI: www.dreamfoxmedia.nl 
- * Version: 1.1.6
+ * Version: 1.1.7
  * Author: Marco van Loghum
  * Author URI: www.dreamfoxmedia.nl 
  * Description: Extend Woocommerce plugin to add shipping methods to a product
@@ -93,38 +93,47 @@ function wps_ship_meta_box_save($post_id, $post)
 function wps_shipping_method_disable_country($available_methods)
 {
     global $woocommerce;
-    // Calculatting max shipping
-    $maxcost_shipping = array();
-    $max_cost = -1;
-    foreach ($available_methods as $key => $available_method) {
-        if ($available_method->cost > $max_cost)
-        {
-            $max_cost = $available_method->cost;
-            $maxcost_shipping = array($key => $available_method);
-        }
-    }
+    $_available_methods = $available_methods;
+    $temp = array();
     $arrayKeys = array_keys($available_methods);
     if (count($woocommerce->cart))
     {
         $items = $woocommerce->cart->cart_contents;
         $itemsShips = '';
-        if (is_array($items))
+        if ( is_array( $items ) )
         {
-            foreach ($items as $item) {
-                $itemsShips = get_post_meta($item['product_id'], 'shippings', true);
-                if (!empty($itemsShips))
+            foreach ( $items as $item ) {
+                $itemsShips = get_post_meta( $item['product_id'], 'shippings', true );
+                if ( !empty( $itemsShips ) )
                 {
-                    foreach ($arrayKeys as $key) {
-                        $method_id = $available_methods[$key]->method_id;
-                        if (!empty($method_id) && !in_array($method_id, $itemsShips))
-                        {
-                            unset($available_methods[$key]);
+                    foreach ( $arrayKeys as $key ) {
+                        if( array_key_exists( $key, $available_methods ) ){
+                            $method_id = $available_methods[$key]->method_id;
+                            if ( !empty( $method_id ) && !in_array( $method_id, $itemsShips ) )
+                            {
+                                unset( $available_methods[$key] );
+                            }
                         }
                     }
+                    $temp = array_merge( $temp, $itemsShips );
+
                 }
             }
         }
     }
+    // Calculatting max shipping
+    $maxcost_shipping = array();
+    $max_cost = -1;
+    foreach ( $_available_methods as $key => $available_method ) {
+        if( array_key_exists( $key, $_available_methods ) ){
+            $method_id = $available_method->method_id;
+            if ( $available_method->cost > $max_cost && in_array( $method_id, $temp ) )
+            {
+                $max_cost = $available_method->cost;
+                $maxcost_shipping = array($key => $available_method);
+            }
+        }
+    }    
     // Showing Max value shipping
     if (count($available_methods))
     {
@@ -135,7 +144,8 @@ function wps_shipping_method_disable_country($available_methods)
     }
 }
 
-add_filter('woocommerce_available_shipping_methods', 'wps_shipping_method_disable_country', 99);
+// update new filter as depricated woocommerce_available_shipping_methods
+add_filter('woocommerce_package_rates', 'wps_shipping_method_disable_country', 99);
 
 function update_user_database()
 {
