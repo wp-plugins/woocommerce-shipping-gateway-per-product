@@ -1,28 +1,54 @@
-=== Woocommerce Shipping Gateway per Product ===
+=== Woocommerce Product Shippings per Product ===
 Contributors: dreamfox
 Donate link: http://www.dreamfoxmedia.nl
 Tags: woocommerce,shipping,plugin,free
 Requires at least: 3.0.1
-Tested up to: 4.0
-Stable tag: 1.1.7
+Tested up to: 4.2
+Stable tag: 1.1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin for woocommerce lets you select the available shipping gateway for each individual product. 
+This plugin for woocommerce lets you select the available shippings for each individual product. 
 
 == Description ==
 
-This plugin for woocommerce lets you select the available shipping gateway for each individual product.<br>
+This plugin for woocommerce lets you select the available shipping gateways for each individual product. 
+
+5 STARS RATING FOR THIS PLUGIN! SEE:<br> 
+http://www.dreamfoxmedia.nl/shop/woocommerce-shipping-gateway-per-product-pro/
+
+This plugin for woocommerce lets you select the available shipping gateways for each individual product.<br>
 You can select for eacht individual product the shipping gateway that will be used by checkout.<br>
-If no selection is made, then the default shippings are displayed.<br>
-If you for example only select paypal then only paypal will available for that product by checking out.
-Works on latest Woocommerce
+If no selection is made, then the default shipping gateways are displayed.<br>
+If you for example only select local delivery then only local delivery will available for that product by checking out.<br>
+Works on latest Woocommerce version.<br>
+This plugin allows you to improve your customer service by giving the best shipping service for your customers.<br>
+This version is limited in features (you can only select different gateways for 10 products).<br>
+For a small fee you can get the Pro version with no limitation at:<br>
+<a href="http://www.dreamfoxmedia.nl/shop/woocommerce-shipping-gateway-per-product-pro/" target="_blank">www.dreamfoxmedia.nl</a>.
 
-This version is limited to set different shipping gateways for 10 product.
-For a small fee you can get the full version with no limitation at: <a href="http://www.dreamfoxmedia.nl" target="_blank">www.dreamfoxmedia.nl</a>.
 
-<b>other plugins from Dreamfox:</b><br>
-Payment gateway per product:  <a href="http://wordpress.org/plugins/woocommerce-product-payments/" target="_blank">Information</a> - <a href="http://wordpress.org/plugins/woocommerce-product-payments/" target="_blank">Free version</a> - <a href="http://www.dreamfoxmedia.nl/shop/payment-gateway-per-product-woocommerce/" target="_blank">Full version</a>
+**Pro version (19,95):**
+**[Woocommerce Shipping Gateway per Product Pro](http://www.dreamfoxmedia.nl/shop/woocommerce-shipping-gateway-per-product-pro/ "Order Shipping Gateway Pro")**<br>
+<br>
+Features:
+<ol>
+<li>Unlimited products</li>
+</ol>
+
+<strong>Demo is available (frontend & Backend)</strong>:<br>
+**View Demo @ [http://demo.dreamfoxmedia.nl/wordpress/available-demos/demo-shipping-gateway/](http://demo.dreamfoxmedia.nl/wordpress/available-demos/demo-shipping-gateway/ "View Demo")**
+
+<strong>other WooCommerce plugins from Dreamfox:</strong<br>
+<ol>
+<li>Payment Gateway per Product: <a href="https://wordpress.org/plugins/woocommerce-payment-gateway-per-product/" target="_blank">Information</a></li>
+<li>WooCommerce Delivery Date Plugin: <a href="https://wordpress.org/plugins/woocommerce-delivery-date/" target="_blank">Information</a></li>
+<li>WooCommerce Mailchimp Plugin: <a href="https://wordpress.org/plugins/woocommerce-mailchimp-plugin/" target="_blank">Information</a></li>
+</ol>
+
+<strong>Social media:</strong><br>
+Twitter: <a href="https://twitter.com/dreamfoxmedia">https://twitter.com/dreamfoxmedia</a><br>
+Facebook: <a href="https://www.facebook.com/dreamfoxmedia">https://www.facebook.com/dreamfoxmedia</a>
 
 == Installation ==
 
@@ -60,7 +86,7 @@ Then 'free' shippings are shown by checkout
 
 = More Information =
 
-For more information, feel free to visit the official website for this plugin: <a href="http://www.dreamfox.nl" target="_blank">Dreamfox</a>.
+For more information, feel free to visit the official website for this plugin: <a href="http://www.dreamfoxmedia.nl" target="_blank">Dreamfox Media</a>.
 
 
 == Screenshots ==
@@ -70,6 +96,12 @@ For more information, feel free to visit the official website for this plugin: <
 3. screenshot3.png
 
 == Changelog === 
+= 1.1.9 =
+* fixed common issue.
+
+= 1.1.8 =
+* fixed is Array error problem.
+
 = 1.1.7 =
 * Some fixes and made compatible with woocommerce 2.2.4
 * Fixing no shipping available problem by showing highest shipping rate option with solving some condition.

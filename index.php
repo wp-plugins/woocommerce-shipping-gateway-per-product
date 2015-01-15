@@ -1,13 +1,14 @@
 <?php
 /**
- * Plugin Name: Woocommerce Shipping Gateway per Product
- * Plugin URI: www.dreamfoxmedia.nl 
- * Version: 1.1.7
+ * Plugin Name: Woocommerce Product Shippings
+ * Plugin URI: www.dreamfox.nl 
+ * Version: 1.1.9
  * Author: Marco van Loghum
- * Author URI: www.dreamfoxmedia.nl 
+ * Author URI: www.dreamfox.nl 
  * Description: Extend Woocommerce plugin to add shipping methods to a product
  * Requires at least: 3.5
  * Tested up to: 4.0
+ * @developer Softsdev <mail.softsdev@gmail.com>
  */
 add_action('add_meta_boxes', 'wps_ship_meta_box_add', 50);
 
@@ -68,10 +69,10 @@ function wps_ship_meta_box_save($post_id, $post)
     if (isset($post->post_type) && $post->post_type == 'revision')
         return $post_id;
 
-    if ($_POST['post_type'] == 'product')
+    if (isset( $_POST['post_type']) && $_POST['post_type'] == 'product')
     {
         $productIds = get_option('woocommerce_product_apply_ship');
-        if (!in_array($post_id, $productIds))
+        if ( is_array( $productIds ) && !in_array( $post_id, $productIds ) )
         {
             $productIds[] = $post_id;
             update_option('woocommerce_product_apply_ship', $productIds);
