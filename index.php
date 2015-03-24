@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Woocommerce Product Shippings
  * Plugin URI: www.dreamfox.nl 
- * Version: 1.1.9
+ * Version: 1.2.0
  * Author: Marco van Loghum
  * Author URI: www.dreamfox.nl 
  * Description: Extend Woocommerce plugin to add shipping methods to a product
